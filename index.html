@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa Pokes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="pagina">
+        <section class="painel-pesquisa">
+            <h1>Pesquisa Pokes</h1>
+            <form id="formulario-pesquisa" name="formulario-pesquisa">
+                <label for="pesquisa-nome-pokemon">Nome do Pokémon:</label>
+                <div class="componentes-entrada">
+                    <input type="text" id="pesquisa-nome-pokemon" name="pesquisa-nome-pokemon" placeholder="Ex: pikachu" autocomplete="off" required>
+                    <button type="submit">Pesquisar</button>
+                </div>
+            </form>
+        </section>
+        <section class="painel-resultado">
+            <h2>Resultados da Pesquisa</h2>
+            <div id="mensagem-status" name="mensagem-status" class="status"></div>
+            <ul id="informacoes-pokemon" name="informacoes-pokemon" class="informacoes-pokemon"></ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
