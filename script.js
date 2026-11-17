@@ -28,7 +28,11 @@ function limpaStatus() {
 // Recebe o objeto retornado pela API e monta a lista com os dados do Pokémon.
 function renderizaPokemon(pokemon) {
   // Extrai apenas os nomes das habilidades e junta em uma string separada por vírgula.
-  const habilidades = pokemon.abilities.map((ability) => ability.ability.name).join(', ');
+  const habilidades = pokemon.abilities.map(
+
+    (ability) => ability.ability.name).
+    
+    join(', ');
 
   // A API retorna altura e peso em decímetros e hectogramas.
   // Dividindo por 10, convertemos para metros e quilos.
@@ -43,6 +47,10 @@ function renderizaPokemon(pokemon) {
     { titulo: 'Peso', conteudo: `${peso} kg` },
     { titulo: 'Habilidades', conteudo: habilidades }
   ];
+
+  console.log(items);
+
+
 
   // Limpa qualquer resultado anterior antes de inserir os novos dados.
   limpaResultado();
@@ -60,7 +68,7 @@ function renderizaPokemon(pokemon) {
 
 // Função assíncrona responsável por buscar o Pokémon na API.
 // O evento é disparado quando o formulário é enviado.
-async function searchPokemon(event) {
+async function procuraPokemon(event) {
   // Previne o comportamento padrão do formulário, que recarregaria a página.
   event.preventDefault();
 
@@ -107,4 +115,4 @@ async function searchPokemon(event) {
 }
 
 // Escuta o evento de envio do formulário e chama a função de busca.
-formulario.addEventListener('submit', searchPokemon);
+formulario.addEventListener('submit', procuraPokemon);
